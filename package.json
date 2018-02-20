@@ -1,0 +1,27 @@
+{
+  "name": "similar-listings-service",
+  "version": "1.0.0",
+  "description": "Similar listings service",
+  "main": "client/app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Untouchables/similar-listings-service.git"
+  },
+  "keywords": [
+    "services",
+    "javascript",
+    "reactjs",
+    "express",
+    "nodejs",
+    "npm"
+  ],
+  "author": "Nyah Check",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/The-Untouchables/similar-listings-service/issues"
+  },
+  "homepage": "https://github.com/The-Untouchables/similar-listings-service#readme"
+}
