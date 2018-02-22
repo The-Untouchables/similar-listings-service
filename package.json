@@ -4,6 +4,8 @@
   "description": "Similar listings service",
   "main": "client/app.js",
   "scripts": {
+    "react-dev": "webpack --d --watch",
+    "server-dev": "nodemon server/app.js",
     "test": "npm test"
   },
   "repository": {
@@ -23,5 +25,18 @@
   "bugs": {
     "url": "https://github.com/The-Untouchables/similar-listings-service/issues"
   },
-  "homepage": "https://github.com/The-Untouchables/similar-listings-service#readme"
+  "homepage": "https://github.com/The-Untouchables/similar-listings-service#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "bluebird": "^3.5.1",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.6",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "underscore": "^1.8.3",
+    "webpack": "^3.11.0"
+  }
 }
