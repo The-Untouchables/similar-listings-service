@@ -5,8 +5,8 @@
   "main": "client/app.js",
   "scripts": {
     "react-dev": "webpack --d --watch",
-    "server-dev": "nodemon server/app.js",
-    "test": "npm test"
+    "start": "nodemon server/app.js",
+    "test": "mocha -R spec src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,9 @@
     "reactjs",
     "express",
     "nodejs",
-    "npm"
+    "docker",
+    "microservice",
+    "mongodb"
   ],
   "author": "Nyah Check",
   "license": "MIT",
@@ -38,5 +40,10 @@
     "react-dom": "^16.2.0",
     "underscore": "^1.8.3",
     "webpack": "^3.11.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.0"
   }
 }
