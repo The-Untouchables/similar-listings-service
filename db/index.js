@@ -21,7 +21,7 @@ var similarListingSchema = mongoose.Schema({
   ratings: Number,
   photo_url: String,
   photo: {
-    data: Buffer,
+    data: String,
     contentType: String
   }
 });
@@ -56,6 +56,7 @@ var seedDb = function(content) {
         if (j === imagesFiles.length - 1) {//reset at end of array.
           j = 0;
         }
+
         var obj = {};
         obj.id = newdata[i].listing.id;
         obj.lon = newdata[i].listing.lng;
@@ -67,8 +68,9 @@ var seedDb = function(content) {
         obj.desc = newdata[i].listing.user.user.about;
         obj.photo_url = newdata[i].listing.medium_url;
         obj.photo = {};
-        obj.photo.data = fs.readFileSync(seedImages + imagesFiles[j]);
+        obj.photo.data = seedImages + imagesFiles[j];
         obj.photo.contentType = 'image/jpg';
+        //console.log('Node: ', i, 'Obj', obj.photo.data);
         similarListings.create(obj, (err, instance) => {
           if (err) {
             console.error('Error writing schema', err);
