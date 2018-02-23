@@ -35,7 +35,7 @@ exports.fetchSimilarListings = function(roomId, cb) {
 exports.putSimilarListings = function(roomId, cb) {
 
   //init Database here.
-  seedDb(seed);
+  //seedDb(seed);
   fs.readdir(dirname, (err, files) => {
     if (err) {
       cb(err);

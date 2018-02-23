@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/rooms/listings', function(req, res) => {
+app.get('/rooms/similarListings', function(req, res) => {
   //
   let roomId = req.body;
   db.fetchSimilarListings(roomId, (err, listings) => {
@@ -20,9 +20,8 @@ app.get('/rooms/listings', function(req, res) => {
   });
 });
 
-app.post('/rooms/listings', function(req, res) => {
+app.post('/rooms/similarListings', function(req, res) => {
   let roomId = req.body;
-  
   db.putSimilarListings(roomId, (err) => {
     if (err) {
       res.status(400).send(`Unable to post similar listings for ${roomId}`);
