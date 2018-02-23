@@ -66,7 +66,7 @@ var seedDb = function(content) {
         obj.city = newdata[i].listing.city;
         obj.desc = newdata[i].listing.user.user.about;
         obj.photo_url = newdata[i].listing.medium_url;
-        listingSchema.create(obj, (err, instance) => {
+        Listings.create(obj, (err, instance) => {
           if (err) {
             console.error('Error writing schema', err);
             throw err;
@@ -82,4 +82,4 @@ var seedDb = function(content) {
 //init Database here.
 seedDb(seed);
 
-module.exports.Listings = mongoose.model('Listings', listingSchema);
+var Listings = mongoose.model('Listings', listingSchema);
