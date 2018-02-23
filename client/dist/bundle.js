@@ -65,14 +65,14 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/*!************************!*\
-  !*** ./client/app.jsx ***!
-  \************************/
+/*!****************************!*\
+  !*** ./client/src/app.jsx ***!
+  \****************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (40:6)\\nYou may need an appropriate loader to handle this file type.\\n|   render () {\\n|     return (\\n|       <div>\\n|         <h1>HackBnB</h1>\\n|       </div>\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///0\n");
+eval("throw new Error(\"Module build failed: Error: Couldn't find preset \\\"env\\\" relative to directory \\\"/Users/student/code/similar-listings-service/client/src\\\"\\n    at /Users/student/code/similar-listings-service/node_modules/babel-core/lib/transformation/file/options/option-manager.js:293:19\\n    at Array.map (native)\\n    at OptionManager.resolvePresets (/Users/student/code/similar-listings-service/node_modules/babel-core/lib/transformation/file/options/option-manager.js:275:20)\\n    at OptionManager.mergePresets (/Users/student/code/similar-listings-service/node_modules/babel-core/lib/transformation/file/options/option-manager.js:264:10)\\n    at OptionManager.mergeOptions (/Users/student/code/similar-listings-service/node_modules/babel-core/lib/transformation/file/options/option-manager.js:249:14)\\n    at OptionManager.init (/Users/student/code/similar-listings-service/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)\\n    at File.initOptions (/Users/student/code/similar-listings-service/node_modules/babel-core/lib/transformation/file/index.js:212:65)\\n    at new File (/Users/student/code/similar-listings-service/node_modules/babel-core/lib/transformation/file/index.js:135:24)\\n    at Pipeline.transform (/Users/student/code/similar-listings-service/node_modules/babel-core/lib/transformation/pipeline.js:46:16)\\n    at transpile (/Users/student/code/similar-listings-service/node_modules/babel-loader/lib/index.js:50:20)\\n    at Object.module.exports (/Users/student/code/similar-listings-service/node_modules/babel-loader/lib/index.js:175:20)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///0\n");
 
 /***/ })
 /******/ ]);
