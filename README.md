@@ -2,6 +2,20 @@
 
 Service for recommending similar listings for Airbnb clone site.
 
+
+## Setup DB.
+
+In a new tab open a mongod instance.
+```
+$ mongod
+```
+Then open a mongodb tab to the db IP
+
+```
+$ mongo --host 127.0.0.1:27017
+```
+
+
 ## Build & Deploy
 
 ```
