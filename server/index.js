@@ -27,6 +27,7 @@ app.post('/rooms/similarListings', function(req, res) => {
       res.status(400).send(`Unable to post similar listings for ${roomId}`);
     } else {
       //Init DB.
+      res.status(200).send(`Initialized Db for ${roomId}`);
     }
   });
 });
