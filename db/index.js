@@ -5,7 +5,7 @@ const querystring = require('querystring');
 mongoose.connect('mongodb://localhost:/hackbnb');
 mongoose.promise = require('bluebird');
 const seed = '../data.json';
-const seedImages = '../images'
+const seedImages = '../images/'
 
 
 //listings service data schema.
@@ -67,7 +67,7 @@ var seedDb = function(content) {
         obj.desc = newdata[i].listing.user.user.about;
         obj.photo_url = newdata[i].listing.medium_url;
         obj.photo = {};
-        obj.photo.data = fs.readFileSync(imagesFiles[j]);
+        obj.photo.data = fs.readFileSync(seedImages + imagesFiles[j]);
         obj.photo.contentType = 'image/jpg';
         similarListings.create(obj, (err, instance) => {
           if (err) {
