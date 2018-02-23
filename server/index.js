@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const bodyParser = require('body-parser');
-const mongodb = require('../db/index');
+const db = require('../db/index');
 let app = express();
 
 app.use(express.static(__dirname + '/../client/dist'));
