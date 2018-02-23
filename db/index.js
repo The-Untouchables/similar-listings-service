@@ -34,13 +34,11 @@ exports.fetchSimilarListings = function(roomId, cb) {
 
 //Store dummy images into db.
 exports.putSimilarListings = function(roomId, cb) {
-
-  //init Databacd se here.
-  seedDb(seed);
-  
+  seedDb(seed, cb);
 };
 
-var seedDb = function(content) {
+
+var seedDb = function(content, cb) {
   fs.readFile(content, 'utf-8', (err, data) => {
     if (err) {
       throw err;
@@ -74,6 +72,7 @@ var seedDb = function(content) {
         similarListings.create(obj, (err, instance) => {
           if (err) {
             console.error('Error writing schema', err);
+            cb(err);
             throw err;
           } else {
             console.log('Instance saved!', instance);
@@ -83,8 +82,5 @@ var seedDb = function(content) {
     }
   });
 };
-
-//init Database here.
-seedDb(seed);
 
 var similarListings = mongoose.model('Listings', similarListingSchema);
