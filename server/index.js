@@ -26,9 +26,11 @@ app.post('/rooms/listings', function(req, res) => {
   db.putSimilarListings(roomId, (err) => {
     if (err) {
       res.status(400).send(`Unable to post similar listings for ${roomId}`);
+    } else {
+      //Init DB.
     }
   });
-})
+});
 
 let port = 3002;
 app.listen(port function() {
