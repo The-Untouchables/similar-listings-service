@@ -28,7 +28,24 @@ var similarListingSchema = mongoose.Schema({
 
 //Fetches similar listings and returns.
 exports.fetchSimilarListings = function(roomId, cb) {
+  //Get room object
+  var room = similarListings.findOne({'id': roomId}, ***'city address price ratings'***, function (err, obj) {
+    if (err) throw err;
+  });
+
+  var query = similarListings.find({'city': room.city});
+  query.select('id city address desc price ratings photo');
+  query.limit(6); //limit results to 6
+  query.sort({ratings: -1}); sort by ratings.
   
+  //execute query
+  query.exec((err, listings) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, listings);
+    }
+  });
 };
 
 
