@@ -8,7 +8,7 @@ const seed = '../data.json';
 
 
 //listings service data schema.
-var listingSchema = mongoose.Schema({
+var similarListingSchema = mongoose.Schema({
   //Listings Schema
   id: Number,
   lon: Number,
@@ -25,12 +25,20 @@ var listingSchema = mongoose.Schema({
   }
 });
 
+//Fetches similar listings and returns.
+exports.fetchSimilarListings = function(roomId, cb) {
+  
+};
 
-//init data and store in a db.
-var initDb = function(dirname) {
+
+//Store new images into db.
+exports.putSimilarListings = function(roomId, cb) {
+
+  //init Database here.
+  seedDb(seed);
   fs.readdir(dirname, (err, files) => {
     if (err) {
-      throw err;
+      cb(err);
     } else {
       files.forEach((file) => {
         fs.readFile(dirname + file, 'utf-8', (err, content) => {
@@ -66,7 +74,7 @@ var seedDb = function(content) {
         obj.city = newdata[i].listing.city;
         obj.desc = newdata[i].listing.user.user.about;
         obj.photo_url = newdata[i].listing.medium_url;
-        Listings.create(obj, (err, instance) => {
+        similarListings.create(obj, (err, instance) => {
           if (err) {
             console.error('Error writing schema', err);
             throw err;
@@ -82,4 +90,4 @@ var seedDb = function(content) {
 //init Database here.
 seedDb(seed);
 
-var Listings = mongoose.model('Listings', listingSchema);
+var similarListings = mongoose.model('Listings', similarListingSchema);
