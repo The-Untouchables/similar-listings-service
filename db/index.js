@@ -41,8 +41,10 @@ exports.fetchSimilarListings = function(roomId, cb) {
   //execute query
   query.exec((err, listings) => {
     if (err) {
+      console.log('fetch err: ', err);
       cb(err, null);
     } else {
+      console.log('Fetch res: ', listings);
       cb(null, listings);
     }
   });
@@ -50,7 +52,7 @@ exports.fetchSimilarListings = function(roomId, cb) {
 
 
 //Store dummy images into db.
-exports.putSimilarListings = function(roomId, cb) {
+exports.putSimilarListings = function(cb) {
   seedDb(seed, cb);
 };
 
