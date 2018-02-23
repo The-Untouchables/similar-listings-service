@@ -1,9 +1,30 @@
 const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
-mogoose.connect('mongodb://localhost:/listings');
+const querystring = require('querystring');
+mongoose.connect('mongodb://localhost:/listings');
 mongoose.promise = require('bluebird');
 const seed = '../data.json';
+
+
+//listings service data schema.
+var listingSchema = mongoose.Schema({
+  //Listings Schema
+  id: Number,
+  lon: Number,
+  lat: Number,
+  city: String,
+  address: String,
+  desc: String,
+  price: Number,
+  ratings: Number,
+  photo_url: String,
+  photo: {
+    data: Buffer,
+    contentType: String
+  }
+});
+
 
 //init data and store in a db.
 var initDb = function(dirname) {
@@ -25,22 +46,27 @@ var initDb = function(dirname) {
 };
 
 var seedDb = function(content) {
-  fs.readFile(content, 'utf-8', (err, data) {
+  fs.readFile(content, 'utf-8', (err, data) => {
     if (err) {
       throw err;
     } else {
-      for (let i = 0; i < data.length;i++) {
+      //console.log('Data: ', data);
+      console.log('typeof: ', typeof data);
+      var newdata = JSON.parse(JSON.parse(data));
+      //console.log('typeof: ', Array.isArray(newdata), 'len: ', newdata.length);
+
+      for (let i = 0; i < newdata.length;i++) {
         var obj = {};
-        obj.id = data[i].listing.id;
-        obj.lon = data[i].listing.lon;
-        obj.lat = data[i].listing.lat;
-        obj.address = data[i].listing.name;
-        obj.price = data[i].price;
-        obj.ratings = data[i].listing.user.user.reviewee_count;
-        obj.city = data[i].listing.city;
-        obj.desc = data[i].listing.user.user.about;
-        obj.photo_url = data[i].listing.medium_url;
-        exports.listingSchema.insertOne(obj, (err, instance) => {
+        obj.id = newdata[i].listing.id;
+        obj.lon = newdata[i].listing.lng;
+        obj.lat = newdata[i].listing.lat;
+        obj.address = newdata[i].listing.address;
+        obj.price = newdata[i].price;
+        obj.ratings = newdata[i].listing.user.user.reviews_count;
+        obj.city = newdata[i].listing.city;
+        obj.desc = newdata[i].listing.user.user.about;
+        obj.photo_url = newdata[i].listing.medium_url;
+        listingSchema.create(obj, (err, instance) => {
           if (err) {
             console.error('Error writing schema', err);
             throw err;
@@ -50,29 +76,10 @@ var seedDb = function(content) {
         });
       }
     }
-  }
+  });
 };
-
-
-//listings service data schema.
-exports.listingSchema = mongoose.Schema({
-  //Listings Schema
-  id: Number,
-  lon: Number,
-  lat: Number,
-  city: String,
-  address: String,
-  desc: String,
-  price: Number,
-  ratings: Number,
-  photo_url: String,
-  photo: {
-    data: Buffer,
-    contentType: String
-  }
-});
 
 //init Database here.
 seedDb(seed);
 
-module.exports.Listings = mongoose.model('Listings', exports.listingSchema);
+module.exports.Listings = mongoose.model('Listings', listingSchema);
