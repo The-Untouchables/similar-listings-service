@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
 const querystring = require('querystring');
-mongoose.connect('mongodb://localhost:/listings');
+mongoose.connect('mongodb://localhost:/hackbnb');
 mongoose.promise = require('bluebird');
 const seed = '../data.json';
 const seedImages = '../images'
@@ -39,28 +39,6 @@ exports.putSimilarListings = function(roomId, cb) {
   seedDb(seed);
   
 };
-
-
-
-fs.readdir(seedImages, (err, files) => {
-    if (err) {
-      cb(err);
-    } else {
-      files.forEach((file) => {
-        fs.readFile(dirname + file, 'utf-8', (err, content) => {
-          if (err) {
-            throw err;
-          } else {
-            //cb(file, content);
-          }
-        });
-      });
-    }
-  });
-
-
-
-
 
 var seedDb = function(content) {
   fs.readFile(content, 'utf-8', (err, data) => {
