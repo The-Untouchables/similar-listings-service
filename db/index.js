@@ -46,16 +46,7 @@ var seedDb = function(content) {
       throw err;
     } else {
       //console.log('Data: ', data);
-      var imagesFiles;
-      fs.readdirSync(seedImages, (err, files) => {
-        if (err) {
-          throw err;
-        } else {
-          files.forEach((file) => {
-            imagesFiles.push(seedImages + file); 
-          });
-        }
-      });
+      var imagesFiles = fs.readdirSync(seedImages);
       
       console.log('typeof: ', typeof data);
       var newdata = JSON.parse(JSON.parse(data));
