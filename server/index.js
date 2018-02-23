@@ -1,5 +1,4 @@
 const express = require('express');
-const multer = require('multer');
 const bodyParser = require('body-parser');
 const db = require('../db/index');
 let app = express();
@@ -35,6 +34,6 @@ app.post('/rooms/similarListings', (req, res) => {
 });
 
 let port = 3002;
-app.listen(port function() {
+app.listen(port, function() {
   console.log(`Listening on port ${port}`);
 });

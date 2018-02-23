@@ -4,7 +4,7 @@
   "description": "Similar listings service",
   "main": "client/app.js",
   "scripts": {
-    "react-dev": "webpack --d --watch",
+    "dev": "webpack --d --watch",
     "start": "nodemon server/index.js",
     "test": "mocha -R spec client/test/*.spec.js"
   },
