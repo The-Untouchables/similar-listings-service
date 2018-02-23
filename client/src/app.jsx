@@ -36,9 +36,11 @@ class App extends React.Component {
   }
 
   render () {
-    return (<div>
-      <h1>HackBnB</h1>
-    </div>)
+    return (
+      <div>
+        <h1>HackBnB</h1>
+      </div>
+    );
   }
 }
 
