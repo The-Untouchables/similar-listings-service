@@ -4,6 +4,8 @@ const propTypes = {};
 
 const defaultProps = {};
 
+
+
 class SimilarListings extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class SimilarListings extends React.Component {
 
   render() {
     return (
-      <div className="similarListings">Similar Listings Service</div>
+      <div className="similarListings" />
     );
   }
 }
