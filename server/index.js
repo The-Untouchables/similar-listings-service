@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/rooms/similarListings', (req, res) => {
+app.get('/rooms/:roomid/similarListings', (req, res) => {
   //
   let roomId = req.body;
   console.log('Req: ', roomId);
@@ -21,7 +21,7 @@ app.get('/rooms/similarListings', (req, res) => {
   });
 });
 
-app.post('/rooms/similarListings', (req, res) => {
+app.post('/rooms/:roomid/similarListings', (req, res) => {
   let roomId = req.body;
   console.log('Req: ', roomId);
   db.putSimilarListings((err) => {
