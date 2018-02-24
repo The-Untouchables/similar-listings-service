@@ -1,11 +1,11 @@
-// import React from 'react';
-// import { expect } from 'chai';
-// import { spy } from 'sinon';
-// import { shallow, mount, render } from 'enzyme';
+import React from 'react';
+import { expect } from 'chai';
+import { spy } from 'sinon';
+import { shallow, mount, render } from 'enzyme';
 
-jest.dontMock('./similarListings');
+jest.dontMock('../similarListings');
 
-const SimilarListings = require('./similarListings');
+const SimilarListings = require('../similarListings');
 
 describe("similarListings Test suite", function() {
   it('should contain spec with an expectation', function() {

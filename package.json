@@ -6,7 +6,7 @@
   "scripts": {
     "react-dev": "webpack --d --watch",
     "start": "nodemon server/index.js",
-    "test": "mocha -R spec client/test/*.spec.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -42,9 +42,11 @@
     "webpack": "^3.11.0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.0",
-    "jest-enzyme": "^4.2.0"
+    "jest-enzyme": "^4.2.0",
+    "sinon": "^4.4.0"
   }
 }
