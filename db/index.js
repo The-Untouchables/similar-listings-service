@@ -5,7 +5,7 @@ const querystring = require('querystring');
 mongoose.connect('mongodb://localhost:/hackbnb');
 mongoose.promise = require('bluebird');
 const seed = '../data.json';
-const seedImages = '../images/'
+const seedImages = '../images/';
 
 
 //listings service data schema.
@@ -50,20 +50,20 @@ exports.fetchSimilarListings = function(roomId, cb) {
   });
 };
 
-
 //Store dummy images into db.
 exports.putSimilarListings = function(cb) {
   seedDb(seed, cb);
 };
 
 
-var seedDb = function(content, cb) {
+var seedDb = function(paths, cb) {
+  let content = path.resolve(__dirname, paths);
   fs.readFile(content, 'utf-8', (err, data) => {
     if (err) {
       throw err;
     } else {
       //console.log('Data: ', data);
-      var imagesFiles = fs.readdirSync(seedImages);
+      var imagesFiles = fs.readdirSync(path.resolve(__dirname, seedImages));
       
       console.log('typeof: ', typeof data);
       var newdata = JSON.parse(JSON.parse(data));
