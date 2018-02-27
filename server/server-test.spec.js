@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const db = require('../db/index');
 chai.use(chaiAsPromised)
 const expect = chai.expect
-db.putSimilarListings()
+//db.putSimilarListings()
 
 describe('Service listings module', () => {
   describe('fetch', () => {
