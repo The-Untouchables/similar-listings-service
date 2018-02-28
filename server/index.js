@@ -20,19 +20,6 @@ app.get('/rooms/:roomid/similarListings', (req, res) => {
   });
 });
 
-app.post('/rooms/:roomid/similarListings', (req, res) => {
-  let roomId = req.body;
-  console.log('Req: ', roomId);
-  db.putSimilarListings((err) => {
-    if (err) {
-      res.status(400).send(`Unable to post similar listings for ${roomId}`);
-    } else {
-      //Init DB.
-      res.status(200).send(`Initialized Db for ${roomId}`);
-    }
-  });
-});
-
 let port = 3002;
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
