@@ -2,36 +2,38 @@
 
 Service for recommending similar listings for Airbnb clone site.
 
-## Related Projects
 
-  - https://github.com/The-Untouchables/similar-listings-service
-  - https://github.com/The-Untouchables/
+## Setup DB.
 
-## Table of Contents
+In a new tab open a mongod instance.
+```
+$ mongod
+```
+Then open a mongodb tab to the db IP
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
+```
+$ mongo --host 127.0.0.1:27017
 ```
 
+
+## Build & Deploy
+
+```
+$ git clone https://github.com/The-Untouchables/similar-listings-service
+$ cd similar-listings-service
+$ npm install && npm start
+$ DEBUG=myapp:* npm start #Debug mode
+$ npm run react-dev #open in a new tab
+$ npm test #runs enzyme, jest tests from terminal
+```
+
+## Contributing
+
+Start by starring and Forking this repository. Follow the basic instruction in the [CONTRIBUTING](CONTRIBUTING.md) file.
+
+## License
+
+similar-listings-service is licensed under [The MIT Licence](LICENSE.md).
+
+## Author
+This project was created and maintained by [Nyah Check](https://twitter.com/nyah_check). Please feel free to reach out, I could always use your help or advice. :-)
