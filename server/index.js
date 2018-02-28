@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/rooms/:roomid/similarListings', (req, res) => {
   //
-  let roomId = req.body.id;
+  let roomId = 20799308;
   console.log('Req: ', roomId);
   db.fetchSimilarListings(roomId, (err, listings) => {
     if (err) {
