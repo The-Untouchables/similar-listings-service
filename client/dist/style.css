@@ -33,7 +33,7 @@ a {
   background: transparent;
 }
 
-.similar {
+.similarListing_inner_container {
   color: #484848 ;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 17px;
@@ -87,10 +87,6 @@ h3 {
   justify-content: center;
   height: 278px;
   padding: 0 6px 30px 6px;
-}
-
-.similarListing_inner_container {
-
 }
 
 .similarListing_title {

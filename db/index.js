@@ -51,7 +51,7 @@ exports.fetchSimilarListings = function(roomId, cb) {
 };
 
 //Store dummy images into db.
-exports.putSimilarListings = function(cb) {
+var putSimilarListings = function(cb) {
   seedDb(seed, cb);
 };
 
@@ -101,5 +101,8 @@ var seedDb = function(paths, cb) {
     }
   });
 };
+
+//Init seed db
+putSimilarListings(console.log);
 
 var similarListings = mongoose.model('Listings', similarListingSchema);

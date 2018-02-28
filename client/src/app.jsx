@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
-import starrating from 'react-star-rating-component';
 import axios from 'axios';
 import SimilarListings from './similarListings.jsx';
 
@@ -14,17 +13,20 @@ class App extends React.Component {
       similarlistings: []
     }
     this.fetch = this.fetch.bind(this);
-    this.fetchRatings = this.fetchRatings.bind(this);
-    this.getSimilarListings = this.getSimilarListings(this);
+    this.getSimilarListings = this.getSimilarListings.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    this.getSimilarListings('San Francisco');
+    this.fetch('20799308');
   }
 
   fetch(id) {
-    axios.get(`/rooms/:${id}/similarListings`)
+    axios.get('/rooms/:roomid/similarListings', {
+      params: {
+        id: id
+      }
+    })
     .then((res) => {
       console.log('Success', res.data);
       this.setState({currentListing: res.data[0], similarListings: res.data});
@@ -34,9 +36,13 @@ class App extends React.Component {
     });
   }
 
-  fetchRatings(id) {
-    axios.get(`/rooms/:${id}/similarListings`)
-     .then((res) => {
+  getSimilarListings(id) {
+    axios.get('/rooms/:roomid/similarListings', {
+      params: {
+        id: id
+      }
+    })
+    .then((res) => {
       console.log('Success', res.data);
     })
     .catch((err) => {
@@ -48,8 +54,8 @@ class App extends React.Component {
     this.fetch(id);
   }
 
-
   render() {
+    this.componentDidMount();
     const settings = {
       dots: true,
       infinite: true,
