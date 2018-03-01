@@ -28,7 +28,7 @@ class App extends React.Component {
       }
     })
     .then((res) => {
-      console.log('Success', res.data);
+      //console.log('Success', res.data);
       this.setState({currentListing: res.data[0], similarListings: res.data});
     })
     .catch((err) => {
@@ -43,7 +43,7 @@ class App extends React.Component {
       }
     })
     .then((res) => {
-      console.log('Success', res.data);
+      //console.log('Success', res.data);
     })
     .catch((err) => {
       console.error('Error getting ratings', err);
@@ -65,19 +65,18 @@ class App extends React.Component {
     };
     return (
       <div>
-        <h2>HackBnB</h2>
+        <h1>HackBnB</h1>
           <div className="similarListings">
             <div className="similarListingsTitle">
-              <h1>Other highly rated Experiences <span>{this.state.currentListing.city}</span></h1>
+              <h2>Other highly rated Experiences in <span>{this.state.currentListing.city}</span></h2>
             </div>
             <div className="similarExp">
               {this.state.similarListings.length > 0 && <Slider {...settings}>
                 {this.state.similarListings.map((item, index) => {
-                  return  
-                    <div key={index}>
+                  return  <div key={index}>
                       <SimilarListings 
                         handleClick={this.handleClick}
-                        similarListing={item} 
+                        similarListing={item}
                         currentListing={this.state.currentListing}
                       />
                     </div>
