@@ -1,9 +1,10 @@
-import Rating from 'react-star-rating-component';
-import * as Vibrant from 'node-vibrant';
+import React from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
-import React from "react";
+import Rating from 'react-star-rating-component';
+import * as vibrant from 'node-vibrant';
 import axios from 'axios';
+import $ from 'jquery';
 
 
 class App extends React.Component {
@@ -20,7 +21,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetch('20799308');
-    //Vibrant.from(this.props.currentListing.photo.data).getPalette((err, palette) => console.log(palette))
+    Vibrant.from(this.props.currentListing.photo.data).getPalette((err, palette) => console.log(palette))
   }
 
   fetch(id) {
@@ -30,8 +31,12 @@ class App extends React.Component {
       }
     })
     .then((res) => {
-      //console.log('Success', res.data);
-      this.setState({currentListing: res.data[0], similarListings: res.data});
+      this.setState({
+        similarListings: res.data,
+        currentListing: res.data[0]
+      });
+      console.log('Success', this.state.similarListings);
+      console.log('Res: ', res.data.length);
     })
     .catch((err) => {
       console.error('Error fetching similar listings', err);
@@ -57,7 +62,6 @@ class App extends React.Component {
   }
 
   render() {
-    this.componentDidMount();
     const settings =  {
       dots: true,
       infinite: false,
@@ -89,7 +93,6 @@ class App extends React.Component {
           }
         }
     ]};
-
     return (
       <div>
         <h1>HackBnB</h1>
@@ -214,3 +217,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
+
+
+
