@@ -29,29 +29,32 @@ var similarListingSchema = mongoose.Schema({
 //Fetches similar listings and returns.
 exports.fetchSimilarListings = function(roomId, cb) {
   //Get room object
-  var room = similarListings.findOne({'id': roomId}, 'city address price ratings', function (err, obj) {
-    if (err) throw err;
-  });
-
-  var query = similarListings.find({'city': room.city});
-  query.select('id city address desc price ratings photo');
-  query.limit(6); //limit results to 6
-  query.sort({ratings: -1}); //sort by ratings.
-  
-  //execute query
-  query.exec((err, listings) => {
+  similarListings.findOne({'id': roomId}, 'city address price ratings', function (err, obj) {
     if (err) {
-      console.log('fetch err: ', err);
-      cb(err, null);
+      throw err;
     } else {
-      console.log('Fetch res: ', listings);
-      cb(null, listings);
+      console.log('Room: ', obj);
+      var query = similarListings.find({'city': obj.city});
+      query.select('id city address desc price ratings photo');
+      query.limit(10); //limit results to 6
+      query.sort({ratings: -1}); //sort by ratings.
+      
+      //execute query
+      query.exec((err, listings) => {
+        if (err) {
+          console.log('fetch err: ', err);
+          cb(err, null);
+        } else {
+          console.log('Fetch res: ', listings);
+          cb(null, listings);
+        }
+      });
     }
   });
 };
 
 //Store dummy images into db.
-exports.putSimilarListings = function(cb) {
+var putSimilarListings = function(cb) {
   seedDb(seed, cb);
 };
 
@@ -64,7 +67,7 @@ var seedDb = function(paths, cb) {
     } else {
       //console.log('Data: ', data);
       var imagesFiles = fs.readdirSync(path.resolve(__dirname, seedImages));
-      
+
       console.log('typeof: ', typeof data);
       var newdata = JSON.parse(JSON.parse(data));
       //console.log('typeof: ', Array.isArray(newdata), 'len: ', newdata.length);
@@ -101,5 +104,8 @@ var seedDb = function(paths, cb) {
     }
   });
 };
+
+//Init seed db
+putSimilarListings(console.log);
 
 var similarListings = mongoose.model('Listings', similarListingSchema);
