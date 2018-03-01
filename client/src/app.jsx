@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentListing: {}, 
-      similarlistings: []
+      similarListings: []
     }
     this.fetch = this.fetch.bind(this);
     this.getSimilarListings = this.getSimilarListings.bind(this);
