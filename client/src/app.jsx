@@ -99,16 +99,112 @@ class App extends React.Component {
           </div>
           <div className="similarExp">
             <Slider {...settings}>
-              <div><h3>1</h3></div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-              <div><h3>5</h3></div>
-              <div><h3>6</h3></div>
-              <div><h3>7</h3></div>
-              <div><h3>8</h3></div>
-              <div><h3>9</h3></div>
-              <div><h3>10</h3></div>
+              <div className="similarListing_container" onClick={() => {this.handleClick(this.state.similarListings[1].id)}}>
+                <div className="similarListing_inner_container">
+                  <img className="similarListing_img" src={this.state.similarListings[1].photo.data} width="237" height="158" />
+                  <div className="similarListing_category">
+                    <span>{this.state.similarListings[1].desc}</span> · <span>{this.state.similarListings[1].city}</span>
+                  </div>
+                  <div className="similarListing_title">{this.state.similarListings[1].address}</div>
+                  <div className="similarListing_price">$<span>{this.state.similarListings[1].price}</span> per night</div>
+                  <div className="similarListing_rating">
+                    <Rating
+                      name={'ratingStars'}
+                      value={this.state.similarListings[1].ratings}
+                      editing={false}
+                      starColor={'#008489'}
+                      emptyStarColor={'#D8D8D8'}
+                    />
+                    <div className="similarListing_rating">{this.state.similarListings[1].ratings}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="similarListing_container" onClick={() => {this.handleClick(this.state.similarListings[2].id)}}>
+                <div className="similarListing_inner_container">
+                  <img className="similarListing_img" src={this.state.similarListings[2].photo.data} width="237" height="158" />
+                  <div className="similarListing_category">
+                    <span>{this.state.similarListings[2].desc}</span> · <span>{this.state.similarListings[2].city}</span>
+                  </div>
+                  <div className="similarListing_title">{this.state.similarListings[2].address}</div>
+                  <div className="similarListing_price">$<span>{this.state.similarListings[2].price}</span> per night</div>
+                  <div className="similarListing_rating">
+                    <Rating
+                      name={'ratingStars'}
+                      value={this.state.similarListings[2].ratings}
+                      editing={false}
+                      starColor={'#008489'}
+                      emptyStarColor={'#D8D8D8'}
+                    />
+                    <div className="similarListing_rating">{this.state.similarListings[2].ratings}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="similarListing_container" onClick={() => {this.handleClick(this.state.similarListings[4].id)}}>
+                <div className="similarListing_inner_container">
+                  <img className="similarListing_img" src={this.state.similarListings[4].photo.data} width="237" height="158" />
+                  <div className="similarListing_category">
+                    <span>{this.state.similarListings[4].desc}</span> · <span>{this.state.similarListings[4].city}</span>
+                  </div>
+                  <div className="similarListing_title">{this.state.similarListings[4].address}</div>
+                  <div className="similarListing_price">$<span>{this.state.similarListings[4].price}</span> per night</div>
+                  <div className="similarListing_rating">
+                    <Rating
+                      name={'ratingStars'}
+                      value={this.state.similarListings[4].ratings}
+                      editing={false}
+                      starColor={'#008489'}
+                      emptyStarColor={'#D8D8D8'}
+                    />
+                    <div className="similarListing_rating">{this.state.similarListings[4].ratings}</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div className="similarListing_container" onClick={() => {this.handleClick(this.state.similarListings[3].id)}}>
+                <div className="similarListing_inner_container">
+                  <img className="similarListing_img" src={this.state.similarListings[3].photo.data} width="237" height="158" />
+                  <div className="similarListing_category">
+                    <span>{this.state.similarListings[3].desc}</span> · <span>{this.state.similarListings[3].city}</span>
+                  </div>
+                  <div className="similarListing_title">{this.state.similarListings[3].address}</div>
+                  <div className="similarListing_price">$<span>{this.state.similarListings[3].price}</span> per night</div>
+                  <div className="similarListing_rating">
+                    <Rating
+                      name={'ratingStars'}
+                      value={this.state.similarListings[3].ratings}
+                      editing={false}
+                      starColor={'#008489'}
+                      emptyStarColor={'#D8D8D8'}
+                    />
+                    <div className="similarListing_rating">{this.state.similarListings[3].ratings}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="similarListing_container" onClick={() => {this.handleClick(this.state.similarListings[5].id)}}>
+                <div className="similarListing_inner_container">
+                  <img className="similarListing_img" src={this.state.similarListings[5].photo.data} width="237" height="158" />
+                  <div className="similarListing_category">
+                    <span>{this.state.similarListings[5].desc}</span> · <span>{this.state.similarListings[5].city}</span>
+                  </div>
+                  <div className="similarListing_title">{this.state.similarListings[5].address}</div>
+                  <div className="similarListing_price">$<span>{this.state.similarListings[5].price}</span> per night</div>
+                  <div className="similarListing_rating">
+                    <Rating
+                      name={'ratingStars'}
+                      value={this.state.similarListings[5].ratings}
+                      editing={false}
+                      starColor={'#008489'}
+                      emptyStarColor={'#D8D8D8'}
+                    />
+                    <div className="similarListing_rating">{this.state.similarListings[5].ratings}</div>
+                  </div>
+                </div>
+              </div>
+
             </Slider>
           </div>
         </div>
