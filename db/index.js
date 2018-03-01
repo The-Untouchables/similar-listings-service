@@ -67,7 +67,7 @@ var seedDb = function(paths, cb) {
     } else {
       //console.log('Data: ', data);
       var imagesFiles = fs.readdirSync(path.resolve(__dirname, seedImages));
-      
+
       console.log('typeof: ', typeof data);
       var newdata = JSON.parse(JSON.parse(data));
       //console.log('typeof: ', Array.isArray(newdata), 'len: ', newdata.length);

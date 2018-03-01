@@ -1,15 +1,16 @@
-import React from "react";
+import Rating from 'react-star-rating-component';
+import * as Vibrant from 'node-vibrant';
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
+import React from "react";
 import axios from 'axios';
-import SimilarListings from './similarListings.jsx';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentListing: {}, 
+      currentListing: {},
       similarListings: []
     }
     this.fetch = this.fetch.bind(this);
@@ -19,6 +20,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetch('20799308');
+    //Vibrant.from(this.props.currentListing.photo.data).getPalette((err, palette) => console.log(palette))
   }
 
   fetch(id) {
@@ -56,36 +58,60 @@ class App extends React.Component {
 
   render() {
     this.componentDidMount();
-    const settings = {
+    const settings =  {
       dots: true,
-      infinite: true,
-      speed: 500,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 4,
       slidesToScroll: 4,
-      slidesToShow: 4
-    };
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+    ]};
+
     return (
       <div>
         <h1>HackBnB</h1>
-          <div className="similarListings">
-            <div className="similarListingsTitle">
-              <h2>Other highly rated Experiences in <span>{this.state.currentListing.city}</span></h2>
-            </div>
-            <div className="similarExp">
-              {this.state.similarListings.length > 0 && <Slider {...settings}>
-                {this.state.similarListings.map((item, index) => {
-                  return  <div key={index}>
-                      <SimilarListings 
-                        handleClick={this.handleClick}
-                        similarListing={item}
-                        currentListing={this.state.currentListing}
-                      />
-                    </div>
-                  })
-                }
-                </Slider>
-              }
-            </div>
+        <div className="similarListings">
+          <div className="similarListingsTitle">
+            <h2>Other highly rated Experiences in <span>{this.state.currentListing.city}</span></h2>
           </div>
+          <div className="similarExp">
+            <Slider {...settings}>
+              <div><h3>1</h3></div>
+              <div><h3>2</h3></div>
+              <div><h3>3</h3></div>
+              <div><h3>4</h3></div>
+              <div><h3>5</h3></div>
+              <div><h3>6</h3></div>
+              <div><h3>7</h3></div>
+              <div><h3>8</h3></div>
+              <div><h3>9</h3></div>
+              <div><h3>10</h3></div>
+            </Slider>
+          </div>
+        </div>
       </div>
     );
   }
