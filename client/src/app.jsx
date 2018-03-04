@@ -21,15 +21,11 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetch('20799308');
-    Vibrant.from(this.props.currentListing.photo.data).getPalette((err, palette) => console.log(palette))
+    //Vibrant.from(this.props.currentListing.photo.data).getPalette((err, palette) => console.log(palette))
   }
 
   fetch(id) {
-    axios.get('/rooms/:roomid/similarListings', {
-      params: {
-        id: id
-      }
-    })
+    axios.get('/rooms/${id}/similarListings')
     .then((res) => {
       this.setState({
         similarListings: res.data,
@@ -44,11 +40,7 @@ class App extends React.Component {
   }
 
   getSimilarListings(id) {
-    axios.get('/rooms/:roomid/similarListings', {
-      params: {
-        id: id
-      }
-    })
+    axios.get('/rooms/${id}/similarListings')
     .then((res) => {
       //console.log('Success', res.data);
     })
@@ -172,7 +164,9 @@ class App extends React.Component {
                   <div className="similarListing_category">
                     <span>{this.state.similarListings[3].desc}</span> · <span>{this.state.similarListings[3].city}</span>
                   </div>
-                  <div className="similarListing_title">{this.state.similarListings[3].address}</div>
+                  <div className="similarListing_title">{this.state.similarListings[3].address}</div
+-
+>
                   <div className="similarListing_price">$<span>{this.state.similarListings[3].price}</span> per night</div>
                   <div className="similarListing_rating">
                     <Rating
@@ -217,6 +211,3 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
-
-
-
