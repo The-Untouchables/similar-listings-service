@@ -7,9 +7,9 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/rooms/:roomid/similarListings', (req, res) => {
+app.get(`/rooms/:roomid/similarListings`, (req, res) => {
   //
-  let roomId = 20799308;
+  let roomId = req.params.roomid;
   console.log('Req: ', roomId);
   db.fetchSimilarListings(roomId, (err, listings) => {
     if (err) {
@@ -20,7 +20,7 @@ app.get('/rooms/:roomid/similarListings', (req, res) => {
   });
 });
 
-let port = 3002;
+let port = 3007;
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
 });
