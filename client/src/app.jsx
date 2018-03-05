@@ -11,8 +11,68 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentListing: {},
-      similarListings: []
+      currentListing: { photo: 
+   { data: '../images/pexels-photo-276625.jpeg',
+     contentType: 'image/jpg' },
+  id: 21826970,
+  lon: -95.37852098550984,
+  lat: 29.750631740465447,
+  address: 'Houston, TX, United States',
+  city: 'Houston',
+  desc: 'Check out My YouTube channel about hosting on Airbnb \n"Airbnb Automated"\n\n I am a traveling small business owner. Though I first used airbnb as a guest,  my primary use for airbnb now is as a host. I really enjoy hosting and hearing about my guests and their stories. What you\'ll find with any of my properties will be a hotel quality clean within a beautiful and artful home. Hello to you all, I wish you safe travels and unforgettable moments on your journey.',
+  photo_url: 'https://a0.muscache.com/im/pictures/3458ea4b-bab0-4a4e-b49c-60d713e76b76.jpg?aki_policy=medium',
+  __v: 0 },
+      similarListings: [{ photo: 
+   { data: '../images/pexels-photo-276625.jpeg',
+     contentType: 'image/jpg' },
+  id: 21826970,
+  lon: -95.37852098550984,
+  lat: 29.750631740465447,
+  address: 'Houston, TX, United States',
+  city: 'Houston',
+  desc: 'Check out My YouTube channel about hosting on Airbnb \n"Airbnb Automated"\n\n I am a traveling small business owner. Though I first used airbnb as a guest,  my primary use for airbnb now is as a host. I really enjoy hosting and hearing about my guests and their stories. What you\'ll find with any of my properties will be a hotel quality clean within a beautiful and artful home. Hello to you all, I wish you safe travels and unforgettable moments on your journey.',
+  photo_url: 'https://a0.muscache.com/im/pictures/3458ea4b-bab0-4a4e-b49c-60d713e76b76.jpg?aki_policy=medium',
+  __v: 0 }, { photo: 
+   { data: '../images/pexels-photo-276625.jpeg',
+     contentType: 'image/jpg' },
+  id: 21826970,
+  lon: -95.37852098550984,
+  lat: 29.750631740465447,
+  address: 'Houston, TX, United States',
+  city: 'Houston',
+  desc: 'Check out My YouTube channel about hosting on Airbnb \n"Airbnb Automated"\n\n I am a traveling small business owner. Though I first used airbnb as a guest,  my primary use for airbnb now is as a host. I really enjoy hosting and hearing about my guests and their stories. What you\'ll find with any of my properties will be a hotel quality clean within a beautiful and artful home. Hello to you all, I wish you safe travels and unforgettable moments on your journey.',
+  photo_url: 'https://a0.muscache.com/im/pictures/3458ea4b-bab0-4a4e-b49c-60d713e76b76.jpg?aki_policy=medium',
+  __v: 0 }, { photo: 
+   { data: '../images/pexels-photo-276625.jpeg',
+     contentType: 'image/jpg' },
+  id: 21826970,
+  lon: -95.37852098550984,
+  lat: 29.750631740465447,
+  address: 'Houston, TX, United States',
+  city: 'Houston',
+  desc: 'Check out My YouTube channel about hosting on Airbnb \n"Airbnb Automated"\n\n I am a traveling small business owner. Though I first used airbnb as a guest,  my primary use for airbnb now is as a host. I really enjoy hosting and hearing about my guests and their stories. What you\'ll find with any of my properties will be a hotel quality clean within a beautiful and artful home. Hello to you all, I wish you safe travels and unforgettable moments on your journey.',
+  photo_url: 'https://a0.muscache.com/im/pictures/3458ea4b-bab0-4a4e-b49c-60d713e76b76.jpg?aki_policy=medium',
+  __v: 0 }, { photo: 
+   { data: '../images/pexels-photo-276625.jpeg',
+     contentType: 'image/jpg' },
+  id: 21826970,
+  lon: -95.37852098550984,
+  lat: 29.750631740465447,
+  address: 'Houston, TX, United States',
+  city: 'Houston',
+  desc: 'Check out My YouTube channel about hosting on Airbnb \n"Airbnb Automated"\n\n I am a traveling small business owner. Though I first used airbnb as a guest,  my primary use for airbnb now is as a host. I really enjoy hosting and hearing about my guests and their stories. What you\'ll find with any of my properties will be a hotel quality clean within a beautiful and artful home. Hello to you all, I wish you safe travels and unforgettable moments on your journey.',
+  photo_url: 'https://a0.muscache.com/im/pictures/3458ea4b-bab0-4a4e-b49c-60d713e76b76.jpg?aki_policy=medium',
+  __v: 0 }, { photo: 
+   { data: '../images/pexels-photo-276625.jpeg',
+     contentType: 'image/jpg' },
+  id: 21826970,
+  lon: -95.37852098550984,
+  lat: 29.750631740465447,
+  address: 'Houston, TX, United States',
+  city: 'Houston',
+  desc: 'Check out My YouTube channel about hosting on Airbnb \n"Airbnb Automated"\n\n I am a traveling small business owner. Though I first used airbnb as a guest,  my primary use for airbnb now is as a host. I really enjoy hosting and hearing about my guests and their stories. What you\'ll find with any of my properties will be a hotel quality clean within a beautiful and artful home. Hello to you all, I wish you safe travels and unforgettable moments on your journey.',
+  photo_url: 'https://a0.muscache.com/im/pictures/3458ea4b-bab0-4a4e-b49c-60d713e76b76.jpg?aki_policy=medium',
+  __v: 0 }]
     }
     this.fetch = this.fetch.bind(this);
     this.getSimilarListings = this.getSimilarListings.bind(this);
@@ -54,7 +114,6 @@ class App extends React.Component {
   }
 
   render() {
-    this.fetch('20799308');
     const settings =  {
       dots: true,
       infinite: false,
@@ -180,23 +239,23 @@ class App extends React.Component {
                 </div>
               </div>
 
-              <div className="similarListing_container" onClick={() => {this.handleClick(this.state.similarListings[5].id)}}>
+              <div className="similarListing_container" onClick={() => {this.handleClick(this.state.similarListings[4].id)}}>
                 <div className="similarListing_inner_container">
-                  <img className="similarListing_img" src={this.state.similarListings[5].photo.data} width="237" height="158" />
+                  <img className="similarListing_img" src={this.state.similarListings[4].photo.data} width="237" height="158" />
                   <div className="similarListing_category">
-                    <span>{this.state.similarListings[5].desc}</span> · <span>{this.state.similarListings[5].city}</span>
+                    <span>{this.state.similarListings[4].desc}</span> · <span>{this.state.similarListings[4].city}</span>
                   </div>
-                  <div className="similarListing_title">{this.state.similarListings[5].address}</div>
-                  <div className="similarListing_price">$<span>{this.state.similarListings[5].price}</span> per night</div>
+                  <div className="similarListing_title">{this.state.similarListings[4].address}</div>
+                  <div className="similarListing_price">$<span>{this.state.similarListings[4].price}</span> per night</div>
                   <div className="similarListing_rating">
                     <Rating
                       name={'ratingStars'}
-                      value={this.state.similarListings[5].ratings}
+                      value={this.state.similarListings[4].ratings}
                       editing={false}
                       starColor={'#008489'}
                       emptyStarColor={'#D8D8D8'}
                     />
-                    <div className="similarListing_rating">{this.state.similarListings[5].ratings}</div>
+                    <div className="similarListing_rating">{this.state.similarListings[4].ratings}</div>
                   </div>
                 </div>
               </div>
