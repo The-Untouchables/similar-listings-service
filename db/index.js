@@ -97,7 +97,7 @@ var seedDb = function(paths, cb) {
             cb(err);
             throw err;
           } else {
-            console.log('Instance saved!');
+            //console.log('Instance saved!', instance);
           }
         });
       }

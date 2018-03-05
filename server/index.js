@@ -2,16 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../db/index');
 let app = express();
-let roomid = '';
 
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get(`/rooms/${roomid}/similarListings`, (req, res) => {
+app.get(`/rooms/:roomid/similarListings`, (req, res) => {
   //
-  console.log('Here', roomid);
-  let roomId = roomid;
+  let roomId = req.params.roomid;
   console.log('Req: ', roomId);
   db.fetchSimilarListings(roomId, (err, listings) => {
     if (err) {
