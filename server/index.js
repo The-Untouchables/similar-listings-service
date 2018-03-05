@@ -22,13 +22,6 @@ app.get(`/rooms/:roomid/similarListings`, (req, res) => {
   });
 });
 
-// app.get(``, (req, res) => {
-//   let image = req.params.url;
-//   let content = path.resolve(__dirname, paths);
-//   var imagesFile = fs.readFileSync(path.resolve(__dirname, image), 'utf8');
-//   res.status(200).send(imagesFile);
-// });
-
 let port = 3007;
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);

@@ -77,7 +77,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetch('20799308');
+    this.fetch('12026845');
   }
 
   fetch(id) {
@@ -101,11 +101,11 @@ class App extends React.Component {
 
   render() {
     const settings =  {
-      dots: true,
+      dots: false,
       infinite: false,
       speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: 5,
+      slidesToScroll: 5,
       responsive: [
         {
           breakpoint: 1024,

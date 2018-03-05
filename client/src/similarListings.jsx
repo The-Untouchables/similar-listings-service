@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 function SimilarListings (props) {
-  console.log('Props Key: ', props.value.id);
+  console.log(props.value);
   return (
     <div className="similarListing_container" onClick={() => {props.value.handleClick(props.value.id)}}>
       <div className="similarListing_inner_container">
