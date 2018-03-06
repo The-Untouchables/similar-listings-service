@@ -86,7 +86,7 @@ class App extends React.Component {
       this.setState({
         similarListings: res.data
       }, function() {
-        console.log('State: ', this.state.similarListings.length);
+        console.log('State: ', this.state.similarListings);
       });
       console.log('Res: ', res.data.length, this.state.similarListings.length);
     })
