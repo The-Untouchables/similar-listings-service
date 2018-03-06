@@ -9,19 +9,28 @@ body {
   margin-bottom: 32px;
 }
 
+.similarExp {
+  color: #484848;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
 .like {
-    position: absolute !important;
-    right: 16px !important;
-    top: 16px !important;
-    z-index: 2 !important;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 2;
 }
 
 .button {
-    cursor: pointer !important;
-    background-color: transparent !important;
-    color: buttontext !important;
-    border: 0px !important;
-    display: block !important;
+    cursor: pointer;
+    background-color: transparent;
+    color: buttontext;
+    border: 0px;
+    display: block;
 }
 
 button {
@@ -49,115 +58,54 @@ button {
   margin-left: 8px;
 }
 .similarListing_title {
-  margin: 0px !important;
-  word-wrap: break-word !important;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-size: 19px !important;
-  line-height: 22px !important;
-  letter-spacing: undefined !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  color: #484848 !important;
-  font-weight: 700 !important;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: undefined;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: 700;
 }
 
 
- /*taken out width of 237px*/
 .similarListing_container {
   cursor: pointer;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   height: 278px;
   padding: 0 6px 30px 6px;
 }
 
-.similarListing_inner_container {
-
-}
-
-.similarListing_title {
-  color: #484848;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 21px;
-  margin-bottom: 4px;
-}
-
 .similarListing_price {
   margin-top: 2px;
-  color: #484848 !important;
-  line-height: normal !important;
+  color: #484848;
+  line-height: normal;
   box-sizing: border-box;
 }
 
 .similarListing_rating {
   margin-top: 2px;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-size: 12px !important;
-  line-height: 16px !important;
-  line-height: 21px !important;
-  letter-spacing: 0.2px !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  color: #484848 !important;
-  padding: 0 4px !important;
-  border-radius: 3.2px !important;
-  background-color: #A61D55 !important;
-}
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 3.2px;
+  background-color: #A61D55;
 }
 
 .similarListing_category{
-  max-height: 44px !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical !important;
-  font-size: 19px !important;
+  max-height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 19px;
 }
 }
 
 .similarListing_img {
   margin: auto;
-}
-
-.slick-initialized,
-.slick-slide {
-  display: flex;
-  justify-content: center;
-}
-
-.slick-next:before, 
-.slick-prev:before {
-  color: grey;
-  opacity: 1;
-  font-size: 45px;
-}
-
-.slick-next.slick-disabled:before,
-.slick-prev.slick-disabled:before {
-  opacity: 0;
-}
-
-.slick-next,
-.slick-prev {
-  top: 79px;
-}
-
-.slick-prev {
-  left: -15px;
-  z-index: 1000;
-}
-
-.slick-next {
-  right: 10px;
-}
-
-i  {
-  font-size: 9px;
-}
-
-* {
-  min-height: 0;
-  min-width: 0;
 }

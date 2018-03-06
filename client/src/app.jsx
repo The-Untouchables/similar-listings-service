@@ -118,9 +118,7 @@ class App extends React.Component {
             <h2>Other highly rated experiences in <span>{this.state.similarListings[0].city}</span></h2>
           </div>
           <div className="similarExp">
-            <Slider {...settings}>
-          		{this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
-            </Slider>
+          	{this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
           </div>
         </div>
       </div>
