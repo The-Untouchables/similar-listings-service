@@ -77,7 +77,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetch('20799308');
+    this.fetch('12026845');
   }
 
   fetch(id) {
@@ -101,47 +101,24 @@ class App extends React.Component {
 
   render() {
     const settings =  {
-      dots: true,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-    ]};
+      className: 'center',
+      infinite: true,
+      centerPadding: '60px',
+      slidesToShow: 5,
+      swipeToSlide: true,
+      afterChange: function (index) {
+        console.log(`Slider Changed to: ${index + 1}, background: #222; color: #bada55`);
+      }
+    };
     return (
       <div>
         <h1>HackBnB</h1>
         <div className="similarListings">
           <div className="similarListingsTitle">
-            <h2>Other highly rated Experiences in <span>{this.state.similarListings[0].city}</span></h2>
+            <h2>Other highly rated experiences in <span>{this.state.similarListings[0].city}</span></h2>
           </div>
           <div className="similarExp">
-            <Slider {...settings}>
-          		{this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
-            </Slider>
+          	{this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
           </div>
         </div>
       </div>

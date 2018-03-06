@@ -7,13 +7,12 @@ import axios from 'axios';
 
 
 function SimilarListings (props) {
-  console.log('Props Key: ', props.value.id);
   return (
-    <div className="similarListing_container" onClick={() => {props.value.handleClick(props.value.id)}}>
+    <div className="similarListing_container">
       <div className="similarListing_inner_container">
         <img className="similarListing_img" src={props.value.photo.data} width="237" height="158" />
         <div className="similarListing_category">
-          <span>{props.value.desc}</span> · <span>{props.value.city}</span>
+          <span>PLUS verified</span> · <span>{props.value.city}</span>
         </div>
         <div className="similarListing_title">{props.value.address}</div>
         <div className="similarListing_price">$<span>{props.value.price}</span> per night</div>
@@ -22,7 +21,7 @@ function SimilarListings (props) {
             name={'ratingStars'}
             value={props.value.ratings}
             editing={false}
-            starColor={'#008489'}
+            starColor={'#484848'}
             emptyStarColor={'#D8D8D8'}
           />
           <div className="similarListing_rating">{props.value.ratings}</div>

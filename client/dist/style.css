@@ -1,3 +1,49 @@
+body {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+  margin-bottom: 32px;
+}
+
+.similarExp {
+  color: #484848;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.like {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 2;
+}
+
+.button {
+    cursor: pointer;
+    background-color: transparent;
+    color: buttontext;
+    border: 0px;
+    display: block;
+}
+
+button {
+  padding:0px;
+  margin:0px
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+}
+
 .app {
   max-width: 1032px;
 }
@@ -11,105 +57,55 @@
   margin-left: 8px;
   margin-left: 8px;
 }
-.similarListingsTitle {
-  padding-left: 14px;
-  font-weight: 700;
+.similarListing_title {
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: undefined;
+  padding-top: 0px;
+  padding-bottom: 0px;
   color: #484848;
-  font-size: 1em;
-  letter-spacing: -0.6px;
-  line-height: 32px;
-  padding-bottom: 2px;
-  padding-top: 2px;
- }
+  font-weight: 700;
+}
 
- /*taken out width of 237px*/
+
 .similarListing_container {
   cursor: pointer;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   height: 278px;
   padding: 0 6px 30px 6px;
 }
 
-.similarListing_inner_container {
-
-}
-
-.similarListing_title {
-  color: #484848;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 21px;
-  margin-bottom: 4px;
-}
-
 .similarListing_price {
+  margin-top: 2px;
   color: #484848;
-  font-weight: 300;
-  font-size: 15px;
-  letter-spacing: 0.2px;
-  line-height: 18px;
+  line-height: normal;
+  box-sizing: border-box;
 }
 
 .similarListing_rating {
-  display: inline;
-  color: #484848;
+  margin-top: 2px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.2px;
-  padding-top: 0;
-  padding-bottom: 10px;
+  padding: 0 4px;
+  border-radius: 3.2px;
+  background-color: #A61D55;
 }
 
 .similarListing_category{
-  color: rgb(208, 26, 6);
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.2px
+  max-height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 19px;
+}
 }
 
 .similarListing_img {
   margin: auto;
-}
-
-.slick-initialized,
-.slick-slide {
-  display: flex;
-  justify-content: center;
-}
-
-.slick-next:before, 
-.slick-prev:before {
-  color: grey;
-  opacity: 1;
-  font-size: 45px;
-}
-
-.slick-next.slick-disabled:before,
-.slick-prev.slick-disabled:before {
-  opacity: 0;
-}
-
-.slick-next,
-.slick-prev {
-  top: 79px;
-}
-
-.slick-prev {
-  left: -15px;
-  z-index: 1000;
-}
-
-.slick-next {
-  right: 10px;
-}
-
-i  {
-  font-size: 9px;
-}
-
-* {
-  min-height: 0;
-  min-width: 0;
 }
