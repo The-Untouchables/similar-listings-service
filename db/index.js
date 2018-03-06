@@ -18,6 +18,8 @@ var similarListingSchema = mongoose.Schema({
   address: String,
   desc: String,
   price: Number,
+  beds: Number,
+  stars: Number,
   ratings: Number,
   photo_url: String,
   photo: {
@@ -35,7 +37,7 @@ exports.fetchSimilarListings = function(roomId, cb) {
     } else {
       console.log('Room: ', obj);
       var query = similarListings.find({'city': obj.city});
-      query.select('id city address desc price ratings photo');
+      query.select('id city address desc price beds stars ratings photo');
       query.limit(10); //limit results to 6
       query.sort({ratings: -1}); //sort by ratings.
       
@@ -69,21 +71,32 @@ var seedDb = function(paths, cb) {
       var imagesFiles = fs.readdirSync(path.resolve(__dirname, seedImages));
       var newdata = JSON.parse(JSON.parse(data));
       //console.log('typeof: ', Array.isArray(newdata), 'len: ', newdata.length);
+      var desc = ['Hilltop Airstream with gorgeous views', 'Avalon Treehouse bungalow', 'Loft studio in the Central Area',
+      'Casa accogliente e tranquilla vicino a Torrazzo','Strum a Guitar in a Bright, Modern Apartment',
+      'Romantic Cabana with view','serene peaceful tower retreat','Designer loft Silom',
+      'Vacation house in etno-eco village Humac', 'Jack Sparrow House, Cornwall', 'Mushroom Dome Cabin',
+      'Hector Cave house', 'Private Pool House with Amazing Views', 'Lussuoso. Vista incantevole.', 'La Salentina, sea, nature & relax'];
 
-      for (let i = 0, j = 0; i < newdata.length && j < imagesFiles.length;i++, j++) {
+      for (let i = 0, j = 0, k = 0; i < newdata.length && j < imagesFiles.length && k < desc.length;i++, j++, k++) {
         if (j === imagesFiles.length - 1) {//reset at end of array.
           j = 0;
+        }
+
+        if (k === desc.length - 1) {
+          k = 0;
         }
 
         var obj = {};
         obj.id = newdata[i].listing.id;
         obj.lon = newdata[i].listing.lng;
         obj.lat = newdata[i].listing.lat;
+        obj.stars = 5;
         obj.address = newdata[i].listing.address;
-        obj.price = newdata[i].price;
+        obj.price =  (200 + i) % 300;
+        obj.beds = (i + 5) % 4;
         obj.ratings = newdata[i].listing.user.user.reviews_count;
         obj.city = newdata[i].listing.city;
-        obj.desc = newdata[i].listing.user.user.about;
+        obj.desc = desc[k];
         obj.photo_url = newdata[i].listing.medium_url;
         obj.photo = {};
         obj.photo.data = seedImages + imagesFiles[j];
@@ -95,7 +108,7 @@ var seedDb = function(paths, cb) {
             cb(err);
             throw err;
           } else {
-            //console.log('Instance saved!', instance);
+            console.log('Instance saved!', instance);
           }
         });
       }

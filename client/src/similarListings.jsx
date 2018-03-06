@@ -12,14 +12,14 @@ function SimilarListings (props) {
       <div className="similarListing_inner_container">
         <img className="similarListing_img" src={props.value.photo.data} width="237" height="158" />
         <div className="similarListing_category">
-          <span>PLUS verified</span> · <span>{props.value.city}</span>
+          <span>ENTIRE APARTMENT</span> · <span>{props.value.beds} BEDS</span>
         </div>
-        <div className="similarListing_title">{props.value.address}</div>
+        <div className="similarListing_title">{props.value.desc}</div>
         <div className="similarListing_price">$<span>{props.value.price}</span> per night</div>
-        <div className="similarListing_rating">
+        <div>
           <Rating
             name={'ratingStars'}
-            value={props.value.ratings}
+            value={props.value.stars}
             editing={false}
             starColor={'#484848'}
             emptyStarColor={'#D8D8D8'}
