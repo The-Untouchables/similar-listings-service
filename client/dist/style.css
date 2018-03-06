@@ -47,6 +47,27 @@ div {
 
 }
 
+
+.similarListing_container {
+  display: inline-block !important;
+  vertical-align: top !important;
+  white-space: normal !important;
+  width: 100% !important;
+  box-sizing: border-box;
+
+  position: relative !important;
+  background: #ffffff !important;
+  color: #484848 !important;
+  height: 100% !important;
+}
+
+.similarListing_img {
+  width: 100% !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+
+
 .like {
     position: absolute;
     right: 16px;
@@ -55,11 +76,11 @@ div {
 }
 
 .button {
-    cursor: pointer;
-    background-color: transparent;
-    color: buttontext;
-    border: 0px;
-    display: block;
+  cursor: pointer;
+  background-color: transparent;
+  color: buttontext;
+  border: 0px;
+  display: block;
 }
 
 button {
@@ -71,6 +92,30 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.image {
+  position: relative !important
+  padding-top: 66.6667%;
+  background: rgb(216, 216, 216);
+  position: relative !important;
+  width: 100% !important;
+  z-index: 0 !important;
+  border-bottom-left-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+  overflow: hidden !important;
+}
+
+
+.img {
+  position: absolute !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  right: 0px !important;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .app {
@@ -99,15 +144,6 @@ button {
   font-weight: 700;
 }
 
-
-.similarListing_container {
-  cursor: pointer;
-  display: inline-block;
-  justify-content: center;
-  height: 278px;
-  padding: 0 6px 30px 6px;
-}
-
 .similarListing_price {
   margin-top: 2px;
   color: #484848;
@@ -132,9 +168,4 @@ button {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   font-size: 19px;
-}
-}
-
-.similarListing_img {
-  margin: auto;
 }
