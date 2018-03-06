@@ -7,11 +7,13 @@ import axios from 'axios';
 
 
 function SimilarListings (props) {
-  console.log(props.value);
   return (
     <div className="similarListing_container" onClick={() => {props.value.handleClick(props.value.id)}}>
       <div className="similarListing_inner_container">
         <img className="similarListing_img" src={props.value.photo.data} width="237" height="158" />
+        <div className='like'>
+          <button type='button' className='button'> </button>
+        </div>
         <div className="similarListing_category">
           <span>{props.value.desc}</span> · <span>{props.value.city}</span>
         </div>
