@@ -139,7 +139,7 @@ class App extends React.Component {
         <h1>HackBnB</h1>
         <div className="similarListings">
           <div className="similarListingsTitle">
-            <h2>Similar listings</h2>
+            <span>Similar listings</span>
           </div>
           <div className="similarExp">
           	{this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
