@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import Rating from 'react-star-rating-component';
 import * as vibrant from 'node-vibrant';
 import SimilarListings from './similarListings.jsx';
+import style from './style.css';
 import axios from 'axios';
 import $ from 'jquery';
 
@@ -135,15 +136,12 @@ class App extends React.Component {
       }
     };
     return (
-      <div>
-        <h1>HackBnB</h1>
-        <div className="similarListings">
-          <div className="similarListingsTitle">
-            <span>Similar listings</span>
-          </div>
-          <div className="similarExp">
-          	{this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
-          </div>
+      <div className="similarListings">
+        <div className="similarListingsTitle">
+          <span>Similar listings</span>
+        </div>
+        <div className="similarExp">
+         {this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
         </div>
       </div>
     );
@@ -151,4 +149,4 @@ class App extends React.Component {
 }
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('listings'));

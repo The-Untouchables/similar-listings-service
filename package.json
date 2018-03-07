@@ -8,6 +8,18 @@
     "start": "nodemon server/index.js",
     "test": "jest"
   },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "unmockedModulePathPatterns": [
+      "react",
+      "enzyme",
+      "jest-enzyme"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/The-Untouchables/similar-listings-service.git"
@@ -50,10 +62,12 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "css-loader": "^0.28.10",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.0",
     "jest-enzyme": "^4.2.0",
-    "sinon": "^4.4.0"
+    "sinon": "^4.4.0",
+    "style-loader": "^0.20.2"
   }
 }
