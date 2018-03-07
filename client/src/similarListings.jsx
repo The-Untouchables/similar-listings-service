@@ -2,19 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Rating from 'react-star-rating-component';
 import axios from 'axios';
+import style from './style.css';
 
 
 function SimilarListings (props) {
   return (
     <div className="similarListing_container">
       <div className="similarListing_img">
-        <div className="like">
-          <button type='button' className='button' aria-busy='false'>
-            <svg viewBox='0 0 32 32' fill='#484848' fillOpacity='0.5' stroke='#ffffff' strokeWidth='2.5' aria-label='Add listing to a list' role='img' strokeLinecap='round' strokeLinejoin='round' style={{height: 24 + 'px'}, {width: 24 + 'px'}, {display: 'block'}}></svg>
-          </button>
-        </div>
         <div className='image'>
-          <img className="img" src={props.value.photo.data} width="237"/>
+          <div className="like">
+            <button type='button' className='button' aria-busy='false'>
+              <svg viewBox='0 0 32 32' fill='#484848' fillOpacity='0.5' stroke='#ffffff' strokeWidth='2.5' aria-label='Add listing to a list' role='img' strokeLinecap='round' strokeLinejoin='round' style={{height: 24 + 'px'}, {width: 24 + 'px'}, {display: 'block'}}></svg>
+            </button>
+          </div>
+          <img className="img" src={props.value.photo.data}/>
         </div>
       </div>
       <div className="similarListing_category">
