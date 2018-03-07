@@ -225,6 +225,8 @@ button {
 .ratings {
   line-height: normal;
   max-height: 24px;
+  width: 72.34px;
+  height: 23;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -240,14 +242,15 @@ button {
   display: inline-block;
   color: #008489;
   font-size: 9px;
-  height: 10px;
+  height: 22px;
+  width: 50px;
   margin-right: 1px;
-  width: 9px;
 }
 
 .reviews {
+  width: 20.33px;
+  height: 22px;
   line-height: 21px;
-
   font-weight: normal;
   margin: 0px;
   word-wrap: break-word;

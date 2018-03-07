@@ -111,9 +111,9 @@ class App extends React.Component {
       this.setState({
         similarListings: res.data
       }, function() {
-        console.log('State: ', this.state.similarListings);
+        //console.log('State: ', this.state.similarListings);
       });
-      console.log('Res: ', res.data.length, this.state.similarListings.length);
+      console.log('Res: ', this.state.similarListings[0].rating, this.state.similarListings[0].stars);
     })
     .catch((err) => {
       console.error('Error fetching similar listings', err);

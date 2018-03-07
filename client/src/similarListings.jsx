@@ -27,7 +27,7 @@ function SimilarListings (props) {
         <div className="similarListing_title">{props.value.desc}</div>
         <div className="similarListing_price">$<span>{props.value.price}</span> per night</div>
         <div className='ratings'>
-          <span className='stars'>
+          <div style={{height: '22px'}, {width: '50px'}, {'font-size': '9px'}}>
             <Rating
               name={'ratingStars'}
               value={props.value.stars}
@@ -35,7 +35,7 @@ function SimilarListings (props) {
               starColor={'#008489'}
               emptyStarColor={'#D8D8D8'}
             />
-          </span>
+          </div>
           <div className="reviews">{props.value.ratings}</div>
         </div>
       </div>
