@@ -36,8 +36,8 @@ function SimilarListings (props) {
               emptyStarColor={'#D8D8D8'}
             />
           </div>
-          <div className="reviews">{props.value.ratings}</div>
         </div>
+        <div className="reviews">{props.value.ratings}</div>
       </div>
     </div>
   );

@@ -236,20 +236,16 @@ button {
 }
 
 .stars {
-  vertical-align: middle;
   line-height: 21px;
   margin-right: 2px;
-  display: inline-block;
+  display: block;
   color: #008489;
-  font-size: 9px;
+  font-size: 13px;
   height: 22px;
   width: 50px;
-  margin-right: 1px;
 }
 
 .reviews {
-  width: 20.33px;
-  height: 22px;
   line-height: 21px;
   font-weight: normal;
   margin: 0px;
@@ -261,9 +257,5 @@ button {
   padding-top: 0px;
   padding-bottom: 0px;
   color: #484848;
-  display: inline;
-}
-
-.app {
-  max-width: 1032px;
+  display: inline-block;
 }
