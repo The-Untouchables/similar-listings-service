@@ -4,7 +4,6 @@ import Rating from 'react-star-rating-component';
 import axios from 'axios';
 import style from './style.css';
 
-
 function SimilarListings (props) {
   return (
     <div className="similarListing_container">
@@ -42,6 +41,5 @@ function SimilarListings (props) {
     </div>
   );
 }
-
 
 export default SimilarListings;

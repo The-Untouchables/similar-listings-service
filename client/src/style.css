@@ -18,8 +18,7 @@
 }
 
 .similarListingsTitle {
-  float: left;
-  width: 648px;
+  width: 600px;
   height: 36px;
   margin-bottom: 24px;
   font-size: 25px;
@@ -40,6 +39,10 @@
 }
 
 .similarExp {
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 0px;
   color: #484848;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
@@ -51,9 +54,8 @@
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: slider-horizontal;
   display: flex;
-  width: 1090px;
-  height: 370px;
-  overflow: scroll;
+  width: 1000px;
+  height: 400px;
 }
 
 .similarListing_container {
@@ -134,8 +136,6 @@ button {
   font-weight: 300;
   letter-spacing: 0.2px;
   line-height: 22px;
-
-
   padding-top: 8px;
 }
 
