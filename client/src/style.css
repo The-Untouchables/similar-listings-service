@@ -58,6 +58,39 @@
   height: 400px;
 }
 
+
+
+keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+body { margin: 0; } 
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left; }
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; 
+}
+
+
+
+
+
+
+
 .similarListing_container {
   margin: 10px;
   display: inline-block;
@@ -220,7 +253,7 @@ button {
 .ratings {
   line-height: normal;
   max-height: 24px;
-  width: 72.34px;
+  width: 76px;
   height: 23;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -233,7 +266,6 @@ button {
 .stars {
   line-height: 21px;
   margin-right: 2px;
-  display: block;
   color: #008489;
   font-size: 13px;
   height: 22px;
@@ -241,15 +273,14 @@ button {
 }
 
 .reviews {
-  margin: 0px;
-  top: -40px;
-  float: left;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.2px;
+  display: inline-block;
   padding-top: 0px;
   padding-bottom: 0px;
   color: #484848;
-  display: inline-block;
+  position: relative;
+  left: -17px;
+  top: -5px;
 }
