@@ -58,39 +58,6 @@
   height: 400px;
 }
 
-
-
-keyframes slidy {
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
-}
-
-body { margin: 0; } 
-div#slider { overflow: hidden; }
-div#slider figure img { width: 20%; float: left; }
-div#slider figure { 
-  position: relative;
-  width: 500%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 30s slidy infinite; 
-}
-
-
-
-
-
-
-
 .similarListing_container {
   margin: 10px;
   display: inline-block;
@@ -146,7 +113,6 @@ button {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   overflow: hidden;
-
   animation-timing-function: ease-out;
   background-size: contain;
   background-position: 50% 50%;
@@ -181,7 +147,6 @@ button {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   text-transform: uppercase;
-
   margin: 0px;
   word-wrap: break-word;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
@@ -196,7 +161,6 @@ button {
 
 .similarListing_title {
   margin-top: 2px;
-
   line-height: 22px;
   max-height: 44px;
   overflow: hidden;
@@ -205,7 +169,6 @@ button {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   font-size: 19px;
-
   margin: 0px;
   word-wrap: break-word;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
@@ -220,34 +183,17 @@ button {
 
 .similarListing_price {
   margin-top: 2px;
-  float: left;
   color: #484848;
   box-sizing: border-box;
-
   margin: 0px;
   word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.2px;
   padding-top: 0px;
   padding-bottom: 0px;
-  color: #484848;
   font-weight: 300;
-  display: inline;
-
-
-  position: absolute;
   display: block;
-  border: 0px;
-  margin: -1px;
-  padding: 0px;
-  height: 1px;
-  width: 1px;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-
-  text-transform: lowercase;
 }
 
 .ratings {
@@ -257,19 +203,8 @@ button {
   height: 23;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  display: inline-block;
-}
-
-.stars {
-  line-height: 21px;
-  margin-right: 2px;
-  color: #008489;
-  font-size: 13px;
-  height: 22px;
-  width: 50px;
+  display: block;
+  float: left;
 }
 
 .reviews {

@@ -25,6 +25,7 @@ function SimilarListings (props) {
         </div>
         <div className="similarListing_title">{props.value.desc}</div>
         <div className="similarListing_price">$<span>{props.value.price}</span> per night</div>
+        
         <div className='ratings'>
           <div style={{height: '22px'}, {width: '50px'}, {fontSize: '13px'}}>
             <Rating
