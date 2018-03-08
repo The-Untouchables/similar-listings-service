@@ -1,4 +1,11 @@
-body {
+.similarListings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 1090px;
+  height: 420px;
+  margin-left: 8px;
+  margin-left: 8px;
   font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.43;
@@ -10,22 +17,8 @@ body {
   box-sizing: border-box;
 }
 
-div {
-  display: block;
-}
-
-.similarListings {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 648px;
-  height: 420px;
-  margin-left: 8px;
-  margin-left: 8px;
-}
-
 .similarListingsTitle {
-  width: 648px;
+  width: 600px;
   height: 36px;
   margin-bottom: 24px;
   font-size: 25px;
@@ -46,6 +39,10 @@ div {
 }
 
 .similarExp {
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 0px;
   color: #484848;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
@@ -56,15 +53,15 @@ div {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: slider-horizontal;
-  display: block;
-
+  display: flex;
+  width: 1000px;
+  height: 400px;
 }
 
 .similarListing_container {
+  margin: 10px;
   display: inline-block;
   vertical-align: top;
-  white-space: normal;
-  width: 100%;
   box-sizing: border-box;
   position: relative;
   background: #ffffff;
@@ -139,8 +136,6 @@ button {
   font-weight: 300;
   letter-spacing: 0.2px;
   line-height: 22px;
-
-
   padding-top: 8px;
 }
 
@@ -225,6 +220,8 @@ button {
 .ratings {
   line-height: normal;
   max-height: 24px;
+  width: 72.34px;
+  height: 23;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -234,23 +231,19 @@ button {
 }
 
 .stars {
-  vertical-align: middle;
   line-height: 21px;
   margin-right: 2px;
-  display: inline-block;
+  display: block;
   color: #008489;
-  font-size: 9px;
-  height: 10px;
-  margin-right: 1px;
-  width: 9px;
+  font-size: 13px;
+  height: 22px;
+  width: 50px;
 }
 
 .reviews {
-  line-height: 21px;
-
-  font-weight: normal;
   margin: 0px;
-  word-wrap: break-word;
+  top: -40px;
+  float: left;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 12px;
   line-height: 16px;
@@ -258,9 +251,5 @@ button {
   padding-top: 0px;
   padding-bottom: 0px;
   color: #484848;
-  display: inline;
-}
-
-.app {
-  max-width: 1032px;
+  display: inline-block;
 }

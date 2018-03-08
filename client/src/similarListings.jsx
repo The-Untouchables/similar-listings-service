@@ -4,7 +4,6 @@ import Rating from 'react-star-rating-component';
 import axios from 'axios';
 import style from './style.css';
 
-
 function SimilarListings (props) {
   return (
     <div className="similarListing_container">
@@ -27,7 +26,7 @@ function SimilarListings (props) {
         <div className="similarListing_title">{props.value.desc}</div>
         <div className="similarListing_price">$<span>{props.value.price}</span> per night</div>
         <div className='ratings'>
-          <span className='stars'>
+          <div style={{height: '22px'}, {width: '50px'}, {fontSize: '13px'}}>
             <Rating
               name={'ratingStars'}
               value={props.value.stars}
@@ -35,13 +34,12 @@ function SimilarListings (props) {
               starColor={'#008489'}
               emptyStarColor={'#D8D8D8'}
             />
-          </span>
-          <div className="reviews">{props.value.ratings}</div>
+          </div>
         </div>
+        <div className="reviews">{props.value.ratings}</div>
       </div>
     </div>
   );
 }
-
 
 export default SimilarListings;
