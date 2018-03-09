@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
 const querystring = require('querystring');
-mongoose.connect('mongodb://0.0.0.0:27018/hackbnb');
+mongoose.connect('mongodb://db:27017/hackbnb');
 mongoose.promise = require('bluebird');
 const seed = '../data.json';
 const seedImages = '../images/';

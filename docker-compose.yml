@@ -7,11 +7,11 @@ services:
     ports:
       - "3007:3007"
     links:
-      - mongo
-  mongo:
-    container_name: mongo
-    image: mongo
+      - db #links to db service
     volumes:
-      - ./data:/data/db
-    ports:
-      - "27018:27018"
+      - .:/hackbnb/app
+    depends_on:
+      - db
+      
+  db:
+    image: mongo
