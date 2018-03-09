@@ -19,6 +19,7 @@ RUN git clone https://github.com/The-Untouchables/similar-listings-service.git /
 
 # Install all Deps
 RUN npm install
+RUN npm install mongoose
 
 # Expose PORT with outside world
 EXPOSE 3007
