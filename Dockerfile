@@ -14,11 +14,11 @@ RUN mkdir -p /hackbnb/app
 # Set working directory
 WORKDIR /hackbnb/app
 
-# Copy the the latest source code from GitHub to CWD
-RUN git clone https://github.com/The-Untouchables/similar-listings-service.git /hackbnb/app
+# Copy the the latest source code to CWD
+ADD . /hackbnb/app
 
 # Install all Deps
-npm install
+RUN npm install --only=production
 
 # Bundle app source
 COPY . .
