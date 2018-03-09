@@ -15,9 +15,7 @@ RUN mkdir -p /hackbnb/app
 WORKDIR /hackbnb/app
 
 # Copy the the latest source code from GitHub to CWD
-RUN git clone https://github.com/The-Untouchables/similar-listings-service.git
-
-WORKDIR /hackbnb/app/similar-listings-service
+RUN git clone https://github.com/The-Untouchables/similar-listings-service.git /hackbnb/app
 
 # Install all Deps
 RUN npm install
