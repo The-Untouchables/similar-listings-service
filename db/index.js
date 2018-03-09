@@ -118,5 +118,4 @@ var seedDb = function(paths, cb) {
 
 //Init seed db
 putSimilarListings(console.log);
-
 var similarListings = mongoose.model('Listings', similarListingSchema);
