@@ -25,6 +25,8 @@ $ npm install && npm start
 $ DEBUG=myapp:* npm start #Debug mode
 $ npm run react-dev #open in a new tab
 $ npm test #runs enzyme, jest tests from terminal
+$ docker build -t similar-listings-service . 
+$ docker compose up
 ```
 
 ## Contributing

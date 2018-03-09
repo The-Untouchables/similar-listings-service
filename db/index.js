@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
 const querystring = require('querystring');
-mongoose.connect('mongodb://localhost:/hackbnb');
+mongoose.connect('mongodb://0.0.0.0:27018/hackbnb');
 mongoose.promise = require('bluebird');
 const seed = '../data.json';
 const seedImages = '../images/';
@@ -18,6 +18,8 @@ var similarListingSchema = mongoose.Schema({
   address: String,
   desc: String,
   price: Number,
+  beds: Number,
+  stars: Number,
   ratings: Number,
   photo_url: String,
   photo: {
@@ -29,29 +31,32 @@ var similarListingSchema = mongoose.Schema({
 //Fetches similar listings and returns.
 exports.fetchSimilarListings = function(roomId, cb) {
   //Get room object
-  var room = similarListings.findOne({'id': roomId}, 'city address price ratings', function (err, obj) {
-    if (err) throw err;
-  });
-
-  var query = similarListings.find({'city': room.city});
-  query.select('id city address desc price ratings photo');
-  query.limit(6); //limit results to 6
-  query.sort({ratings: -1}); //sort by ratings.
-  
-  //execute query
-  query.exec((err, listings) => {
+  similarListings.findOne({'id': roomId}, 'city address price ratings', function (err, obj) {
     if (err) {
-      console.log('fetch err: ', err);
-      cb(err, null);
+      throw err;
     } else {
-      console.log('Fetch res: ', listings);
-      cb(null, listings);
+      console.log('Room: ', obj);
+      var query = similarListings.find({'city': obj.city});
+      query.select('id city address desc price beds stars ratings photo');
+      query.limit(10); //limit results to 6
+      query.sort({ratings: -1}); //sort by ratings.
+      
+      //execute query
+      query.exec((err, listings) => {
+        if (err) {
+          console.log('fetch err: ', err);
+          cb(err, null);
+        } else {
+          console.log('Fetch res: ', listings);
+          cb(null, listings);
+        }
+      });
     }
   });
 };
 
 //Store dummy images into db.
-exports.putSimilarListings = function(cb) {
+var putSimilarListings = function(cb) {
   seedDb(seed, cb);
 };
 
@@ -64,25 +69,34 @@ var seedDb = function(paths, cb) {
     } else {
       //console.log('Data: ', data);
       var imagesFiles = fs.readdirSync(path.resolve(__dirname, seedImages));
-      
-      console.log('typeof: ', typeof data);
       var newdata = JSON.parse(JSON.parse(data));
       //console.log('typeof: ', Array.isArray(newdata), 'len: ', newdata.length);
+      var desc = ['Hilltop Airstream with gorgeous views', 'Avalon Treehouse bungalow', 'Loft studio in the Central Area',
+      'Casa accogliente e tranquilla vicino a Torrazzo','Strum a Guitar in a Bright, Modern Apartment',
+      'Romantic Cabana with view','serene peaceful tower retreat','Designer loft Silom',
+      'Vacation house in etno-eco village Humac', 'Jack Sparrow House, Cornwall', 'Mushroom Dome Cabin',
+      'Hector Cave house', 'Private Pool House with Amazing Views', 'Lussuoso. Vista incantevole.', 'La Salentina, sea, nature & relax'];
 
-      for (let i = 0, j = 0; i < newdata.length && j < imagesFiles.length;i++, j++) {
+      for (let i = 0, j = 0, k = 0; i < newdata.length && j < imagesFiles.length && k < desc.length;i++, j++, k++) {
         if (j === imagesFiles.length - 1) {//reset at end of array.
           j = 0;
+        }
+
+        if (k === desc.length - 1) {
+          k = 0;
         }
 
         var obj = {};
         obj.id = newdata[i].listing.id;
         obj.lon = newdata[i].listing.lng;
         obj.lat = newdata[i].listing.lat;
+        obj.stars = 5;
         obj.address = newdata[i].listing.address;
-        obj.price = newdata[i].price;
-        obj.ratings = newdata[i].listing.user.user.reviews_count;
+        obj.price =  (200 + i) % 300;
+        obj.beds = (i + 5) % 4;
+        obj.ratings = obj.beds + obj.price;
         obj.city = newdata[i].listing.city;
-        obj.desc = newdata[i].listing.user.user.about;
+        obj.desc = desc[k];
         obj.photo_url = newdata[i].listing.medium_url;
         obj.photo = {};
         obj.photo.data = seedImages + imagesFiles[j];
@@ -102,4 +116,6 @@ var seedDb = function(paths, cb) {
   });
 };
 
+//Init seed db
+putSimilarListings(console.log);
 var similarListings = mongoose.model('Listings', similarListingSchema);

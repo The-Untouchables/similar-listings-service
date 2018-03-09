@@ -1,0 +1,276 @@
+.similarListings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 1090px;
+  height: 420px;
+  margin-left: 8px;
+  margin-left: 8px;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 40px;
+  box-sizing: border-box;
+}
+
+.similarListingsTitle {
+  float: left;
+  width: 350px;
+  height: 35px;
+  margin-bottom: 24px;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: -0.6px;
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #484848;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.similarExp {
+  font-size: 0px;
+  color: #484848;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  line-height: 22px;
+  width: 98%;
+  height: 300px;
+  display: inline-flex;
+}
+
+.similarListing_container {
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+  background: #ffffff;
+  color: #484848;
+  height: 360px;
+}
+
+.similarListing_img {
+  height: 222px;
+  width: 333px;
+  position: relative;
+  z-index: 0;
+}
+
+.like {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 2;
+}
+
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  color: buttontext;
+  border: 0px;
+  display: block;
+}
+
+button {
+  padding:0px;
+  margin:0px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.image {
+  position: relative;
+  padding-top: 66.6667%;
+  background: rgb(216, 216, 216);
+  position: relative;
+  z-index: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  overflow: hidden;
+  animation-timing-function: ease-out;
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.img {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 222px;
+  width: 333px;
+}
+
+.similarListing_category {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  line-height: 22px;
+  padding-top: 8px;
+}
+
+.similarListing_top {
+  line-height: 16px;
+  max-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-transform: uppercase;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: rgb(3, 21, 13);
+  font-weight: 700;
+}
+
+.similarListing_title {
+  margin-top: 2px;
+  line-height: 22px;
+  max-height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 19px;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: undefined;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: 700;
+}
+
+.similarListing_price {
+  margin-top: 2px;
+  color: #484848;
+  box-sizing: border-box;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-weight: 300;
+  display: block;
+}
+
+.ratings {
+  line-height: normal;
+  max-height: 24px;
+  width: 76px;
+  height: 23;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  float: left;
+}
+
+.reviews {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  display: inline-block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  position: relative;
+  left: -17px;
+  top: -5px;
+}
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+.slick-next: before,
+.slick-prev: before {
+  color: #c4c4c4;
+  opacity: 1;
+  font-size: 45px;
+  width: 24px;
+  height: 24px;
+  fill: rgb(118, 118, 118);
+}
+
+.slick-next {
+  right: -25px;
+}
+
+.slick-next, .slick-prev {
+  font-size: 0;
+  line-height: 0;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  fill: rgb(118, 118, 118);
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: pointer;
+}
+
+.slick-slider {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-next::before, .slick-prev::before {
+  content: "→";
+}
+
+.slick-next:before, .slick-prev:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: #c4c4c4;
+}
+
+.slick-dots li button:before, .slick-next:before, .slick-prev:before {
+  font-family: slick;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  fill: rgb(118, 118, 118);
+}
