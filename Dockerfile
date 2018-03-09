@@ -3,7 +3,7 @@
 # Based on node tip
 ############################################################
 
-FROM node:latest
+FROM node:carbon
 
 # Set warning to debugging
 ENV NPM_CONFIG_LOGLEVEL warn
@@ -18,12 +18,15 @@ WORKDIR /hackbnb/app
 RUN git clone https://github.com/The-Untouchables/similar-listings-service.git /hackbnb/app
 
 # Install all Deps
-RUN npm install
-RUN npm install mongoose
+npm install
+
+# Bundle app source
+COPY . .
 
 # Expose PORT with outside world
 EXPOSE 3007
 
 RUN echo "Image build complete."
+
 
 CMD [ "npm", "start" ]
