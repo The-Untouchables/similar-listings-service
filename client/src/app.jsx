@@ -126,7 +126,6 @@ class App extends React.Component {
   render() {
     const settings =  {
       dots: false,
-      className: 'similarExp',
       infinite: false,
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -139,9 +138,11 @@ class App extends React.Component {
         <div className="similarListingsTitle">
           <span>Similar listings</span>
         </div>
-        <Slider {...settings}>
-		   {this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
-        </Slider>
+        <div className='similarExp'>
+          <Slider {...settings}>
+		       {this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
+          </Slider>
+        </div>
       </div>
     );
   }
