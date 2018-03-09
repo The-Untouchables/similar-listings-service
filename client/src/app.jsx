@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Slider from "react-slick";
 import Rating from 'react-star-rating-component';
-import * as vibrant from 'node-vibrant';
+import Slider from "react-slick";
 import SimilarListings from './similarListings.jsx';
 import style from './style.css';
 import axios from 'axios';
@@ -126,11 +125,11 @@ class App extends React.Component {
 
   render() {
     const settings =  {
-      className: 'center',
-      infinite: true,
-      centerPadding: '60px',
-      slidesToShow: 5,
-      swipeToSlide: true,
+      dots: false,
+      className: 'similarExp',
+      infinite: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
       afterChange: function (index) {
         console.log(`Slider Changed to: ${index + 1}, background: #222; color: #bada55`);
       }
@@ -140,9 +139,9 @@ class App extends React.Component {
         <div className="similarListingsTitle">
           <span>Similar listings</span>
         </div>
-        <div className="similarExp">
-         {this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
-        </div>
+        <Slider {...settings}>
+		   {this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
+        </Slider>
       </div>
     );
   }
