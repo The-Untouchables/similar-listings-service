@@ -1,9 +1,7 @@
 version: "3"
 services:
   listings:
-    container_name: listings
-    restart: always
-    build: .
+    image: ch3ck/similar-listings
     ports:
       - "3007:3007"
     depends_on:
