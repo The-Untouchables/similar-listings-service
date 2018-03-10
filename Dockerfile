@@ -25,4 +25,4 @@ EXPOSE 3007
 
 RUN echo "Image build complete."
 
-CMD [ "npm run docker" ]
+CMD [ "npm", "start" ]
