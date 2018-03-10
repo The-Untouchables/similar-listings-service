@@ -1,17 +1,12 @@
-version: "2"
+version: "3"
 services:
-  app:
-    container_name: app
+  listings:
+    container_name: listings
     restart: always
     build: .
     ports:
       - "3007:3007"
-    links:
-      - db #links to db service
-    volumes:
-      - .:/hackbnb/app
     depends_on:
       - db
-      
   db:
     image: mongo

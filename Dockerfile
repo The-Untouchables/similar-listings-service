@@ -20,13 +20,9 @@ ADD . /hackbnb/app
 # Install all Deps
 RUN npm install --only=production
 
-# Bundle app source
-COPY . .
-
 # Expose PORT with outside world
 EXPOSE 3007
 
 RUN echo "Image build complete."
 
-
-CMD [ "npm", "start" ]
+CMD [ "npm run docker" ]
