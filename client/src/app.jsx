@@ -11,9 +11,9 @@ import $ from 'jquery';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.listings: {list: props.listings};
+    this.listings = props.listings;
     this.state = {
-      roomId: props.roomId;
+      roomId: props.roomId,
       similarListings: props.listings
     }
     this.fetch = this.fetch.bind(this);
@@ -27,11 +27,11 @@ class App extends React.Component {
   }
 
   fetch(id) {
-    axios.get(`/rooms/${id}/similarListings`, { crossdomain: true })
+    axios.get(`/api/rooms/${this.props.roomId}/similarListings`, { crossdomain: true })
     .then((res) => {
-      this.listings = {list: props.listings};
+      this.listings = res.data;
       this.setState({
-        similarListings: props.listings
+        similarListings: res.data
       });
     })
     .catch((err) => {
@@ -50,7 +50,7 @@ class App extends React.Component {
       slidesToShow: 3,
       slidesToScroll: 1,
       afterChange: function (index) {
-        console.log(`Slider Changed to: ${index + 1}, background: #222; color: #bada55`);
+        console.log(`Slider Changed to: ${index + 1}`);
       }
     };
     return (
@@ -60,7 +60,7 @@ class App extends React.Component {
         </div>
         <div className='similarExp'>
           <Slider {...settings}>
-		       {this.listings.list.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
+		       {this.state.similarListings && this.state.similarListings.map((listing, index) => <SimilarListings key={index} value={listing}/>)}
           </Slider>
         </div>
       </div>
@@ -68,5 +68,4 @@ class App extends React.Component {
   }
 }
 
-
-ReactDOM.render(<App />, document.getElementById('listings'));
+export default App;

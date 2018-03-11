@@ -5,7 +5,7 @@
   "main": "client/dist/app.js",
   "scripts": {
     "dev": "webpack --d --watch",
-    "start": "node server/index.js",
+    "start": "nodemon server/index.js",
     "seed": "node db/index.js",
     "docker": "npm run seed && npm run start",
     "test": "jest"
