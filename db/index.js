@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
-mongoose.connect('mongodb://localhost:27017/hackbnb');
+mongoose.connect('mongodb://db:27017/hackbnb');
 mongoose.promise = require('bluebird');
 const seed = '../data.json';
 const seedImages = '../images/';
