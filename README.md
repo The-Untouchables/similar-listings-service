@@ -29,6 +29,14 @@ $ docker build -t ch3ck/similar-listings .
 $ docker compose up --build
 ```
 
+### Deploy
+
+Open the browser to 
+```
+http://localhost:3007/rooms/${roomId}/similarListings
+```
+Sample roomId can be: 21142291 or any valid room Id in the database.
+
 ## Contributing
 
 Start by starring and Forking this repository. Follow the basic instruction in the [CONTRIBUTING](CONTRIBUTING.md) file.
